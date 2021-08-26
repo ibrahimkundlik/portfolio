@@ -1,15 +1,31 @@
-/* *,
+*,
 ::after,
 ::before {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-} */
-
-body {
-	color: #140856;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: var(--primary-text);
+}
+:root {
+	--primary-bg: #0e1d33;
+	--primary-text: #c9d4f5;
+	--head-text: #5dfcd7;
+}
+html,
+button {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	min-height: 100vh;
-	background-color: #e8ffea;
-	text-align: center;
+	font-size: 18px;
+	letter-spacing: 0.8px;
+	font-weight: 600;
+}
+body {
+	color: var(--primary-text);
+	background: var(--primary-bg);
+	overflow-x: hidden;
 }
