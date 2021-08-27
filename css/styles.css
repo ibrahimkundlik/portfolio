@@ -12,6 +12,9 @@ a {
 	text-decoration: none;
 	color: var(--primary-text);
 }
+img {
+	width: 100%;
+}
 :root {
 	--primary-bg: #0e1d33;
 	--primary-text: #c9d4f5;
@@ -28,4 +31,8 @@ body {
 	color: var(--primary-text);
 	background: var(--primary-bg);
 	overflow-x: hidden;
+}
+
+.tech-logo {
+	max-width: 30px;
 }
