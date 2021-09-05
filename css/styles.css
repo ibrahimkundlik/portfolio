@@ -5,34 +5,43 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+:root {
+	--dark-blue: #0e1d33;
+	--grey-low: #c9d4f5;
+	--grey-high: #8892b0;
+	--cyan: #5dfcd7;
+}
+
 li {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
-	color: var(--primary-text);
-}
-img {
-	width: 100%;
-}
-:root {
-	--primary-bg: #0e1d33;
-	--primary-text: #c9d4f5;
-	--head-text: #5dfcd7;
-}
-html,
-button {
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 18px;
-	letter-spacing: 0.8px;
-	font-weight: 600;
-}
-body {
-	color: var(--primary-text);
-	background: var(--primary-bg);
-	overflow-x: hidden;
+	color: var(--grey-low);
 }
 
-.tech-logo {
-	max-width: 30px;
+img {
+	/* width: 100%; */
+	max-width: 200px;
+}
+
+/* 
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Source Code Pro', monospace; 
+*/
+
+html,
+button {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+body {
+	color: var(--grey-low);
+	background: var(--dark-blue);
+	overflow-x: hidden;
 }
