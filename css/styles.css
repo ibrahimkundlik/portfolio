@@ -125,28 +125,32 @@ body {
 .intro-container .info {
 	font-family: "Source Code Pro", monospace;
 	font-weight: bold;
-	margin: var(--s-gap) 0;
+	margin: 0.3rem 0;
 }
 
-.contact-btn {
+.custom-btn {
 	outline: none;
 	border: 2px solid var(--cyan);
 	border-radius: 5px;
 	background: transparent;
 	color: var(--cyan);
-	padding: var(--m-gap);
 	font-weight: bold;
-	margin: 2.5rem 0;
-	letter-spacing: 1.5px;
-	width: 180px;
 	cursor: pointer;
+	padding: var(--s-gap);
+	letter-spacing: 1.5px;
+}
+
+.contact-btn {
+	width: 180px;
+	margin: 2.5rem 0;
+	padding: var(--m-gap);
 }
 
 /* about me */
 .section-head {
 	font-family: "Playfair Display", serif;
 	font-size: 2rem;
-	margin: var(--l-gap) 0 3rem 0;
+	margin: 3rem 0;
 	position: relative;
 	width: max-content;
 	background: var(--dark-blue);
@@ -179,14 +183,101 @@ body {
 	line-height: 1.8;
 }
 
+.about-info .info span {
+	font-family: "Source Code Pro", monospace;
+	color: var(--cyan);
+}
+
 .tech-stack {
 	font-family: "Source Code Pro", monospace;
-	margin: var(--m-gap) 0;
+	margin: var(--m-gap) 0 var(--s-gap) 0;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
 
 .tech-container {
-	width: 45%;
+	font-family: "Source Code Pro", monospace;
+	width: 49%;
+	margin-bottom: var(--s-gap);
+	padding-left: var(--m-gap);
+	position: relative;
+}
+
+.tech-container::before {
+	content: "\26B2";
+	color: var(--cyan);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.tech-info {
+	font-size: 0.9rem;
+}
+
+/* projects */
+.project {
+	background: #122648;
+	padding: var(--l-gap) var(--m-gap);
+	margin: var(--l-gap) auto;
+	border-radius: var(--s-gap);
+}
+
+.project-img img {
+	border-radius: var(--s-gap);
+}
+
+.project-name {
+	margin: var(--m-gap) 0;
+	font-size: 1.8rem;
+}
+
+.project-desc {
+	margin: var(--m-gap) 0 1.5rem 0;
+}
+
+.project-live {
+	margin-right: var(--m-gap);
+}
+
+.project-stack {
+	font-family: "Source Code Pro", monospace;
+	margin-bottom: var(--l-gap);
+	line-height: 1.6;
+	color: var(--grey-high);
+}
+
+.project-info .custom-btn {
+	padding: var(--s-gap) var(--m-gap);
+}
+
+.all-projects {
+	width: 220px;
+	display: block;
+	margin: 4rem auto 0 auto;
+}
+
+/* contact */
+.contact-desc {
+	margin: var(--m-gap) 0;
+}
+
+.contact-links {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: var(--l-gap) 0;
+}
+
+.contact-link {
+	width: 40px;
+}
+
+.footer {
+	font-family: "Source Code Pro", monospace;
+	background: #122648;
+	padding: var(--l-gap) 0;
+	text-align: center;
 }
