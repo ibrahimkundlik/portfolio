@@ -11,10 +11,11 @@
 	--dark-blue: #0e1d33;
 	--grey-low: #c9d4f5;
 	--grey-high: #8892b0;
-	--cyan: #5dfcd7;
+	--cyan: #5dfcd8;
 	--s-gap: 0.5rem;
 	--m-gap: 1rem;
 	--l-gap: 2rem;
+	--xl-gap: 3rem;
 }
 
 li {
@@ -39,8 +40,8 @@ font-family: 'Source Code Pro', monospace;
 html,
 button {
 	font-family: "Poppins", sans-serif;
-	font-size: 16px;
 	font-weight: 400;
+	font-size: calc(15px + (26 - 15) * ((100vw - 300px) / (1600 - 300)));
 }
 
 body {
@@ -104,17 +105,18 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 4.5rem 0 3rem 0;
+	min-height: calc(100vh - 100px);
+	padding: 4rem 0;
 }
 
 .name-head {
-	font-size: 2.8rem;
+	font-size: 2.8em;
 	color: var(--grey-high);
 }
 
 .desc-head {
-	font-size: 1.5rem;
-	margin: var(--m-gap) 0;
+	font-size: 1.5em;
+	margin: var(--l-gap) 0;
 }
 
 .desc-head span {
@@ -124,8 +126,8 @@ body {
 
 .intro-container .info {
 	font-family: "Source Code Pro", monospace;
-	font-weight: bold;
-	margin: 0.3rem 0;
+	font-weight: 300;
+	margin: 0.2rem 0;
 }
 
 .custom-btn {
@@ -138,19 +140,24 @@ body {
 	cursor: pointer;
 	padding: var(--s-gap);
 	letter-spacing: 1.5px;
+	transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+	box-shadow: 0px 0px 5px 2px var(--cyan);
 }
 
 .contact-btn {
-	width: 180px;
-	margin: 2.5rem 0;
+	margin-top: var(--xl-gap);
 	padding: var(--m-gap);
+	width: max-content;
 }
 
 /* about me */
 .section-head {
 	font-family: "Playfair Display", serif;
-	font-size: 2rem;
-	margin: 3rem 0;
+	font-size: 2em;
+	margin: var(--xl-gap) 0;
 	position: relative;
 	width: max-content;
 	background: var(--dark-blue);
@@ -158,12 +165,11 @@ body {
 }
 
 .section-head::after {
-	content: "//";
+	content: "\22EF";
 	color: var(--cyan);
 	position: absolute;
 	top: 0%;
-	left: 105%;
-	z-index: -1;
+	left: 102%;
 }
 
 .profile-photo {
@@ -213,14 +219,18 @@ body {
 }
 
 .tech-info {
-	font-size: 0.9rem;
+	font-size: 0.9em;
 }
 
 /* projects */
+.project-container .section-head,
+.contact-container .section-head {
+	margin-top: 5rem;
+}
 .project {
 	background: #122648;
 	padding: var(--l-gap) var(--m-gap);
-	margin: var(--l-gap) auto;
+	margin-bottom: var(--xl-gap);
 	border-radius: var(--s-gap);
 }
 
@@ -230,7 +240,7 @@ body {
 
 .project-name {
 	margin: var(--m-gap) 0;
-	font-size: 1.8rem;
+	font-size: 1.8em;
 }
 
 .project-desc {
@@ -274,6 +284,10 @@ body {
 	text-align: center;
 }
 
+.contact-info p:nth-child(3) {
+	margin-top: var(--m-gap);
+}
+
 .contact-head {
 	margin-bottom: var(--m-gap);
 }
@@ -295,5 +309,5 @@ body {
 	background: #122648;
 	padding: var(--l-gap) 0;
 	text-align: center;
-	font-size: 0.9rem;
+	font-size: 0.9em;
 }
