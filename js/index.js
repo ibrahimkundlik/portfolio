@@ -1,5 +1,6 @@
 const navCont = document.querySelector(".nav-container");
 const navBtn = document.querySelector(".hamburger");
+const logoCont = document.querySelector(".logo-cont");
 
 const toggleNavbar = (e) => {
 	if (e.target.className !== "nav-container nav-open") {
@@ -21,3 +22,8 @@ const toggleNavbar = (e) => {
 
 navBtn.addEventListener("click", toggleNavbar);
 navCont.addEventListener("click", toggleNavbar);
+logoCont.addEventListener("click", (e) => {
+	if (navCont.className === "nav-container nav-open") {
+		navBtn.click();
+	}
+});
