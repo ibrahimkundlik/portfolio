@@ -8,6 +8,14 @@ const toggleNavbar = (e) => {
 			each.classList.toggle("ham-close");
 		});
 		document.body.classList.toggle("disable-scroll");
+		if (e.currentTarget.className !== "hamburger")
+			setTimeout(() => {
+				window.scroll({
+					top: window.scrollY - 100,
+					left: 0,
+					behavior: "smooth",
+				});
+			}, 100);
 	}
 };
 

@@ -30,6 +30,7 @@ a {
 
 img {
 	width: 100%;
+	object-fit: cover;
 }
 
 html,
@@ -106,6 +107,7 @@ body {
 	border: none;
 	background: none;
 	cursor: pointer;
+	width: 35px;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -114,15 +116,16 @@ body {
 	height: 3px;
 	background: var(--grey-high);
 	margin: 6px 0 6px auto;
+	transition: all 0.3s ease-in-out;
 }
 .ham1 {
-	width: 35px;
+	width: 100%;
 }
 .ham2 {
-	width: 25px;
+	width: 70%;
 }
 .ham3 {
-	width: 15px;
+	width: 40%;
 }
 .hamburger .ham-close:nth-child(1) {
 	transform: rotate(45deg);
@@ -135,7 +138,7 @@ body {
 }
 .hamburger .ham-close:nth-child(3) {
 	transform: translate(-11px, -23px) rotate(-45deg);
-	width: 35px;
+	width: 100%;
 	transform-origin: right;
 	background: #e9294f;
 }
@@ -155,7 +158,7 @@ body {
 }
 
 .desc-head {
-	font-size: 1.5em;
+	font-size: 6.5vw;
 	margin: var(--l-gap) 0;
 }
 
@@ -216,12 +219,37 @@ body {
 
 .profile-photo {
 	width: 60%;
+	max-width: 300px;
 	margin: 0 auto 2.5rem auto;
 	position: relative;
 }
 
+.profile-photo::after,
+.project-img::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: var(--cyan);
+	border-radius: var(--s-gap);
+	opacity: 0.2;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.profile-photo:hover::after,
+.project-img:hover::after {
+	opacity: 0;
+}
+
 .profile-photo img {
-	border-radius: 1rem;
+	display: block;
+	border-radius: var(--s-gap);
+}
+
+.about-info {
+	max-width: 700px;
+	margin: 0 auto;
 }
 
 .about-info .info {
@@ -269,14 +297,21 @@ body {
 .contact-container .section-head {
 	margin-top: 5rem;
 }
+
 .project {
 	background: #122648;
+	max-width: 650px;
 	padding: var(--l-gap) var(--m-gap);
-	margin-bottom: var(--xl-gap);
+	margin: 0 auto var(--xl-gap) auto;
 	border-radius: var(--s-gap);
 }
 
+.project-img {
+	position: relative;
+}
+
 .project-img img {
+	display: block;
 	border-radius: var(--s-gap);
 }
 
@@ -310,7 +345,6 @@ body {
 }
 
 .all-projects {
-	width: 240px;
 	display: block;
 	margin: 4rem auto 0 auto;
 }
@@ -328,6 +362,8 @@ body {
 /* contact */
 .contact-info {
 	text-align: center;
+	max-width: 700px;
+	margin: 0 auto;
 }
 
 .contact-info p:nth-child(3) {
@@ -357,4 +393,23 @@ body {
 	padding: var(--l-gap) 0;
 	text-align: center;
 	font-size: 0.9em;
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) {
+	.main-container {
+		padding: 0 var(--xl-gap);
+	}
+
+	.logo-cont {
+		width: 50px;
+	}
+
+	.desc-head {
+		font-size: 6.3vw;
+	}
+
+	.hamburger {
+		width: 40px;
+	}
 }
