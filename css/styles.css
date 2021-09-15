@@ -8,7 +8,7 @@
 }
 
 :root {
-	--dark-blue: #0e1d33;
+	--dark-blue: #112341;
 	--grey-low: #c9d4f5;
 	--grey-high: #8892b0;
 	--cyan: #5dfcd8;
@@ -37,18 +37,19 @@ html,
 button {
 	font-family: "Poppins", sans-serif;
 	font-weight: 400;
-	font-size: calc(15px + (26 - 15) * ((100vw - 300px) / (1600 - 300)));
+	font-size: calc(15px + (22 - 15) * ((100vw - 300px) / (1600 - 300)));
 }
 
 body {
 	color: var(--grey-low);
 	background: var(--dark-blue);
 	overflow-x: hidden;
+	position: relative;
 }
 
 /* header */
 .main-container {
-	max-width: 1400px;
+	max-width: 1600px;
 	margin: 0 auto;
 	padding: 0 var(--m-gap);
 	position: relative;
@@ -62,8 +63,11 @@ body {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	padding: 1.5rem 0;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 1.5rem var(--m-gap);
 	background: var(--dark-blue);
+	background-blend-mode: multiply;
 }
 
 .logo-cont {
@@ -71,14 +75,19 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
+.logo-cont img {
+	display: block;
+}
+
 .nav-container {
 	position: absolute;
-	background: var(--dark-blue);
 	top: 100%;
+	left: 0;
 	width: 0;
 	height: 0;
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
+	background: var(--dark-blue);
 }
 
 .nav-open {
@@ -152,6 +161,18 @@ body {
 	padding: 4rem 0;
 }
 
+.intro-container::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: calc(100vh);
+	background: url("../images/profile/hero.svg") left top / cover no-repeat;
+	/* background by SVGBackgrounds.com */
+	z-index: -1;
+}
+
 .name-head {
 	font-size: 2.8em;
 	color: var(--grey-high);
@@ -205,7 +226,6 @@ body {
 	margin: var(--xl-gap) 0;
 	position: relative;
 	width: max-content;
-	background: var(--dark-blue);
 	padding-right: var(--s-gap);
 }
 
@@ -224,7 +244,7 @@ body {
 	position: relative;
 }
 
-.profile-photo::after,
+/* .profile-photo::after,
 .project-img::after {
 	content: "";
 	position: absolute;
@@ -240,14 +260,14 @@ body {
 .profile-photo:hover::after,
 .project-img:hover::after {
 	opacity: 0;
-}
+} */
 
 .profile-photo img {
 	display: block;
 	border-radius: var(--s-gap);
 }
 
-.about-info {
+.about-main-cont {
 	max-width: 700px;
 	margin: 0 auto;
 }
@@ -299,7 +319,7 @@ body {
 }
 
 .project {
-	background: #122648;
+	background: #162e51;
 	max-width: 650px;
 	padding: var(--l-gap) var(--m-gap);
 	margin: 0 auto var(--xl-gap) auto;
@@ -389,7 +409,7 @@ body {
 
 .footer {
 	font-family: "Source Code Pro", monospace;
-	background: #122648;
+	background: #162e51;
 	padding: var(--l-gap) 0;
 	text-align: center;
 	font-size: 0.9em;
@@ -399,6 +419,11 @@ body {
 @media only screen and (min-width: 768px) {
 	.main-container {
 		padding: 0 var(--xl-gap);
+		overflow-x: hidden;
+	}
+
+	.header-container {
+		padding: var(--m-gap) var(--xl-gap);
 	}
 
 	.logo-cont {
@@ -411,5 +436,155 @@ body {
 
 	.hamburger {
 		width: 40px;
+	}
+
+	.tech-container {
+		width: 30%;
+		margin-bottom: var(--m-gap);
+	}
+}
+
+/* desktop */
+@media only screen and (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
+
+	.header-container {
+		align-items: center;
+	}
+
+	.nav-open {
+		font-size: unset;
+	}
+
+	.disable-scroll {
+		overflow: unset;
+	}
+
+	.nav-container {
+		position: static;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 50%;
+	}
+
+	.nav-link a {
+		padding: 0 5px 3px 5px;
+		width: max-content;
+		margin-left: auto;
+		border-bottom: 2px solid transparent;
+		transition: border 0.3s ease-in-out;
+	}
+
+	.nav-link a:hover {
+		border-color: var(--cyan);
+	}
+
+	.intro-container {
+		padding: 0;
+		min-height: calc(100vh - 100px);
+		position: relative;
+	}
+
+	.intro-container::before {
+		content: "";
+		position: absolute;
+		top: 3%;
+		left: 70%;
+		width: 100%;
+		height: 95%;
+		background: url("../images/profile/hero.png") left top / contain no-repeat;
+	}
+
+	.name-head {
+		font-size: 2rem;
+	}
+
+	.desc-head {
+		font-size: 2.5rem;
+		margin: var(--l-gap) 0 var(--l-gap) 0;
+		line-height: 1.3;
+		transform: translateY(-10px);
+		position: relative;
+	}
+
+	.desc-head span {
+		margin: 0;
+		letter-spacing: 2px;
+	}
+
+	.intro-container .info {
+		font-size: 0.7rem;
+	}
+
+	.contact-btn {
+		margin-top: var(--m-gap);
+	}
+
+	.contact-btn a {
+		padding: var(--s-gap) var(--m-gap);
+	}
+
+	.about-container .section-head {
+		margin-bottom: var(--s-gap);
+	}
+
+	.about-main-cont {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+	}
+
+	.profile-photo {
+		width: 35%;
+		margin: 0;
+	}
+
+	.about-info {
+		width: 60%;
+	}
+
+	.tech-stack-cont {
+		width: 100%;
+		max-width: unset;
+	}
+
+	.tech-container {
+		width: 24%;
+		margin-bottom: var(--m-gap);
+	}
+
+	.project {
+		max-width: unset;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.project-img {
+		width: 40%;
+	}
+
+	.project-info {
+		width: 58%;
+	}
+
+	.project:nth-child(2) .project-img,
+	.project:nth-child(4) .project-img {
+		order: 2;
+	}
+
+	.project:nth-child(2) .project-info,
+	.project:nth-child(4) .project-info {
+		order: 1;
 	}
 }
