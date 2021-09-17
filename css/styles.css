@@ -454,10 +454,12 @@ body {
 		width: 50%;
 	}
 
+	.nav-link {
+		text-align: right;
+	}
+
 	.nav-link a {
 		padding: 0 5px 3px 5px;
-		width: max-content;
-		margin-left: auto;
 		border-bottom: 2px solid transparent;
 		transition: border 0.3s ease-in-out;
 	}
